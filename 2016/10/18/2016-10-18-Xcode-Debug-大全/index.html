@@ -19,6 +19,7 @@
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
+    hostname: new URL('http://yyang8080.github.io').hostname,
     root: '/',
     scheme: 'Mist',
     version: '7.5.0',
@@ -26,7 +27,7 @@
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
     copycode: {"enable":false,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
-    bookmark: {"enable":true,"color":"#222","save":"auto"},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
     mediumzoom: false,
     lazyload: false,
@@ -41,11 +42,6 @@
     localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
     path: '',
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    translation: {
-      copy_button: '复制',
-      copy_success: '复制成功',
-      copy_failure: '复制失败'
-    },
     sidebarPadding: 40
   };
 </script>
@@ -97,16 +93,6 @@
 
   <title>Xcode Debug 大全 | Yang's Blog</title>
   
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151880507-1"></script>
-    <script>
-      var host = window.location.hostname;
-      if (host !== "localhost" || !true) {
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-151880507-1');
-      }
-    </script>
 
 
 
@@ -199,7 +185,6 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
-  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
 
     <main class="main">
@@ -364,21 +349,18 @@
 
         
 
-          <div class="post-nav">
-            <div class="post-nav-next post-nav-item">
-                <a href="/2016/10/10/2016-10-10-iOS-%E6%89%8B%E5%8A%BF%E4%B8%8E%E5%8F%98%E5%BD%A2/" rel="next" title="iOS手势与变形">
-                  <i class="fa fa-chevron-left"></i> iOS手势与变形
-                </a>
-            </div>
 
-            <span class="post-nav-divider"></span>
-
-            <div class="post-nav-prev post-nav-item">
-                <a href="/2019/11/06/hello-world/" rel="prev" title="Hello World">
-                  Hello World <i class="fa fa-chevron-right"></i>
-                </a>
-            </div>
-          </div>
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2016/10/10/2016-10-10-iOS-%E6%89%8B%E5%8A%BF%E4%B8%8E%E5%8F%98%E5%BD%A2/" rel="prev" title="iOS手势与变形">
+      <i class="fa fa-chevron-left"></i> iOS手势与变形
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/11/06/hello-world/" rel="next" title="Hello World">
+      Hello World <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
       </footer>
     
   </article>
@@ -422,8 +404,6 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <img class="site-author-image" itemprop="image" alt="Yu Yang"
-    src="/images/avatar.gif">
   <p class="site-author-name" itemprop="name">Yu Yang</p>
   <div class="site-description" itemprop="description"></div>
 </div>
@@ -442,10 +422,6 @@
       </div>
   </nav>
 </div>
-  <div class="chat motion-element"><i class="fa fa-comment"></i>
-    Chat
-  </a>
-  </div>
 
 
 
@@ -470,14 +446,10 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Yang</span>
+  <span class="author" itemprop="copyrightHolder">Yu Yang</span>
 </div>
 
         
-
-
-
-
 
 
 
@@ -497,7 +469,7 @@
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 <script src="/js/utils.js"></script><script src="/js/motion.js"></script>
 <script src="/js/schemes/muse.js"></script>
-<script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -522,10 +494,10 @@
 
   
 
-<link rel="stylesheet" href="cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
 
 <script>
-  NexT.utils.getScript('cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
     var gitalk = new Gitalk({
       clientID: '86d22ffa4f1947090b1a',
       clientSecret: 'e766d5c626480cc7212c4702e78e09e0164b138e',
@@ -533,7 +505,7 @@
       owner: 'yyang8080',
       admin: ['yyang8080'],
       id: 'c61f0c568cdf608ae72d7c35c4431a26',
-        language: 'zh-CN',
+        language: '',
       distractionFreeMode: 'true'
     });
     gitalk.render('gitalk-container');
